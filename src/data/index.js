@@ -1,6 +1,7 @@
 import SvgImagotype from "../assets/svg/imagotype.svg";
 import SvgImagotypeLight from "../assets/svg/imagotype_light.svg";
 import SvgHeartPlus from "../assets/svg/heartplus.svg";
+import JpgLanding from "../assets/img/landing.avif";
 
 export const Imagotype = {
   name: "CiudadSalud",
@@ -23,4 +24,10 @@ export const NavIcons = {
     title: "HeartPlus",
     href: "",
   },
+};
+
+export const ImgLanding = {
+  src: JpgLanding,
+  title: "Portada Landing",
+  href: "",
 };
