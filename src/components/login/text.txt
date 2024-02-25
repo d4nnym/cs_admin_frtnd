@@ -1,0 +1,21 @@
+<FormGroup
+        type="number"
+        inputRegister={{
+          ...register("identidad", {
+            required: true,
+            pattern: {
+              value: /^0?\d{12}$/,
+              message: "Por favor, ingresa un DNI válido",
+            },
+            maxLength: {
+              value: 13,
+              message: "El DNI debe contener 13 dígitos",
+            },
+          }),
+        }}
+        name="identidad"
+        placeholder=""
+        inpuMode="numeric"
+      >
+        Identidad
+      </FormGroup>
