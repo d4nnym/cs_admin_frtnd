@@ -1,16 +1,18 @@
 import { NavIcons } from "../../data/index";
+import Link from "next/link";
 
 export default function Navbar() {
   const navList = [
+    { SvgIcon: NavIcons.AddPersonal, path: "/personal", name: "Personal" },
     { SvgIcon: NavIcons.HeartPlus, path: "/patient", name: "Paciente" },
-    { SvgIcon: NavIcons.HeartPlus, path: "/patient", name: "Paciente" },
-    { SvgIcon: NavIcons.HeartPlus, path: "/patient", name: "Paciente" },
+    { SvgIcon: NavIcons.LogOut, path: "/close", name: "Cerrar Sesión" },
   ];
 
   const navigation = navList.map((item, index) => {
     return (
       <>
-        <div
+        <Link
+          href={item.path}
           key={index}
           role="button"
           tabIndex="0"
@@ -20,7 +22,7 @@ export default function Navbar() {
             <item.SvgIcon.SvgComponent width="18px" height="18px" />
           </div>
           {item.name}
-        </div>
+        </Link>
       </>
     );
   });

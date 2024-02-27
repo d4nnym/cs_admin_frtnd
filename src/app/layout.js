@@ -1,6 +1,6 @@
 
 import "./globals.css";
-
+import Admin from "@/context/Admin";
 
 
 export const metadata = {
@@ -11,7 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="h-screen w-screen">{children}</body>
+      <body className="h-screen w-screen">
+        <Admin>{children}</Admin>
+        </body>
     </html>
   );
 }

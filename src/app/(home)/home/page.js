@@ -1,3 +1,5 @@
+//import { useEffect } from "react";
+
 export default function Home() {
   return (
     <div className="px-3 md:lg:xl:px-40   border-t border-b py-20 bg-opacity-10 ">

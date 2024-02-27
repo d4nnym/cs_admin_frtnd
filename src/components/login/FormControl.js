@@ -4,7 +4,7 @@ import FormGroup from "@/common/FormGroup";
 import Button from "@/common/Button";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
-import { postProfile } from "@/service/profile";
+import { signIn,useSession } from "next-auth/react"
 
 export default function FormControl() {
   const path = {
@@ -12,6 +12,9 @@ export default function FormControl() {
     error: "/signin#error",
   };
 
+  const { data: session, status } = useSession()
+  
+  
   const router = useRouter();
 
   const {
@@ -20,10 +23,18 @@ export default function FormControl() {
     formState: { errors },
   } = useForm();
 
+  if (status === "authenticated") {
+    router.push(path.home);
+  }
+  
   const onSubmit = async (data, e) => {
     e.preventDefault();
-
-    const postData = await postProfile(data);
+    
+    console.log({...data});
+    const postData = await signIn("credentials", {
+      redirect: false,
+      ...data,
+    });
 
     if (!postData) {
       console.log("algo salió mal"); //handleShow();
@@ -34,7 +45,9 @@ export default function FormControl() {
   };
 
   // type="email" {...register('email', { required: true })}
+
   return (
+
     <form onSubmit={handleSubmit(onSubmit)}>
       <FormGroup
         type="text"

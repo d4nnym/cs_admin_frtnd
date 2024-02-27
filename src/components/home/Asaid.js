@@ -1,8 +1,6 @@
 import Navbar from "./Navbar";
 
 export default function Asaid() {
-
-
   return (
     <aside>
       <div role="sidebar" className="fixed w-64">
