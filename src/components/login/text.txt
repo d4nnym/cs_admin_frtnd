@@ -15,7 +15,7 @@
         }}
         name="identidad"
         placeholder=""
-        inpuMode="numeric"
+        inputMode="numeric"
       >
         Identidad
       </FormGroup>

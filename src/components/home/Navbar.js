@@ -1,13 +1,19 @@
-import { NavIcons } from "../../data/index";
+"use client";
+import { NavIcons } from "@/data/index";
 import Link from "next/link";
 
+import { usePathname } from "next/navigation";
+
 export default function Navbar() {
+  const pathname = usePathname();
+  console.log(pathname);
+
   const navList = [
     { SvgIcon: NavIcons.AddPersonal, path: "/personal", name: "Personal" },
     { SvgIcon: NavIcons.HeartPlus, path: "/patient", name: "Paciente" },
     { SvgIcon: NavIcons.LogOut, path: "/close", name: "Cerrar Sesión" },
   ];
-
+  //${pathname === item.path ? 'nav-active' : ''}
   const navigation = navList.map((item, index) => {
     return (
       <>
@@ -16,7 +22,7 @@ export default function Navbar() {
           key={index}
           role="button"
           tabIndex="0"
-          className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-500 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-gray-50 active:bg-opacity-80 hover:text-white focus:text-white active:text-white outline-none"
+          className={`nav-aside ${pathname === item.path ? "nav-active" : ""}`}
         >
           <div className="grid place-items-center mr-4">
             <item.SvgIcon.SvgComponent width="18px" height="18px" />

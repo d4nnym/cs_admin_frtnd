@@ -33,6 +33,14 @@
   hover:shadow-blue-500/40;
 }
 
+.btn-success {
+  @apply bg-green-600 
+  text-white 
+  shadow-md 
+  shadow-green-600/20 
+  hover:shadow-green-600/40;
+}
+
 .btn-secondary {
   @apply bg-white
   text-gray-700 
@@ -44,9 +52,8 @@
   hover:shadow-gray-300/40;
 }
 
-.text-control{
-  @apply 
-  h-full
+.text-control {
+  @apply h-full
   w-full
   rounded-[7px]
   border
@@ -71,9 +78,8 @@
   disabled:bg-gray-50;
 }
 
-.label-control{
-  @apply
-  text-slate-600 
+.label-control {
+  @apply text-gray-600
   before:content-[''] 
   after:content-[''] 
   pointer-events-none 
@@ -87,7 +93,6 @@
   text-[11px] 
   font-normal 
   leading-tight 
-  text-gray-400 
   transition-all 
   before:pointer-events-none 
   before:mt-[6.5px] 
@@ -129,4 +134,43 @@
   peer-disabled:before:border-transparent 
   peer-disabled:after:border-transparent 
   peer-disabled:peer-placeholder-shown:text-gray-500;
+}
+
+.nav-active {
+  @apply bg-blue-500;
+}
+
+.cards-home {
+  @apply p-10 
+  flex 
+  flex-col 
+  items-center 
+  text-center 
+  md:lg:xl:border-r 
+  md:lg:xl:border-b 
+  shadow-xl 
+  shadow-neutral-100 
+  border bg-white 
+  hover:bg-slate-100 
+  cursor-pointer;
+}
+
+.nav-aside {
+  @apply flex 
+  items-center 
+  w-full 
+  p-3 
+  rounded-lg 
+  text-start 
+  leading-tight 
+  transition-all
+  hover:bg-blue-500 
+  hover:bg-opacity-80
+  focus:bg-blue-500 
+  focus:bg-opacity-80
+  active:bg-blue-500 
+  active:bg-opacity-80
+  hover:text-white
+  focus:text-white
+  outline-none;
 }
